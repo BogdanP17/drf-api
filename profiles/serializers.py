@@ -5,10 +5,9 @@ from .models import Profile
 class ProfileSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
 
-
     class Meta:
         model = Profile
-        field = [
-            'id', 'owner', 'created_', 'updated_at', 'name',
+        fields = [
+            'id', 'owner', 'created_at', 'updated_at', 'name',
             'content', 'image'
         ]
